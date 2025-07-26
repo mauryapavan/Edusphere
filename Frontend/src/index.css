@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+body {
+  background-color: rgb(12, 1, 18);
+  color: aliceblue;
+
+}
+
+
+/* subject */
+
+.subject:hover {
+  box-shadow: 5px 5px 5px rgb(159, 193, 227);
+}
+
+/* video page */
+
+.videodes:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.sidebarvideo:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 775px) {
+  .videosummery {
+    position: absolute;
+    z-index: 9;
+  }
+
+  .mainvideo {
+    position: relative;
+  }
+}
+
+
+/* login page */
+
+.loginpage {
+  border-radius: 2%;
+
+  border: 1px solid gray;
+  box-shadow: 5px 2px 5px whitesmoke;
+}
+
+
+/* profile */
+.profile {
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.profile:hover {
+  color: aqua;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+/* navbar */
+.icon:hover {
+  cursor: pointer;
+  font-size: 75px;
+  font-weight: 400;
+  color: aqua;
+}
+
+.profileicon:hover {
+  color: aqua;
+
+}
+
+/* footer */
+.policy {
+  color: rgb(182, 7, 7);
+}
+
+.policy:hover {
+  color: aqua;
+}
+
+.contact {
+  opacity: 0.8;
+}
+
+.contact:hover {
+  opacity: 1;
+  color: aqua;
+  font-size: 40px;
+}
+
+
+/* mybatch */
+.addnewbatch {
+  border: 5px solid gray;
+  border-radius: 10px;
+}
+
+.addnewbatch:hover {
+  color: aqua;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+.mysubject{
+   background-color: rgb(213, 226, 247);
+    color: black
+}
+.mysubject:hover{
+  color: aqua;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+
+
+.signin:hover{
+  color: aqua;
+}
+.login:hover{
+  color: aqua;
+}
+
+
+.myphoto{
+  border-radius: 49%;
+}
