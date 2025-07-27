@@ -3,10 +3,11 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Cookies from 'js-cookie';
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 
 
 export function Formbatch({ setaddbatch }) {
+     let navigate=useNavigate();
     let [batch, setbatch] = useState({ batch_name: "", price: 0 });
     let [file, setfile] = useState(null);
     let [loading, setloading]=useState(false);
@@ -44,7 +45,7 @@ export function Formbatch({ setaddbatch }) {
                 const { status, message } = data;
                 if (status) {
                     handleSuccess(message);
-                    setTimeout(() => { window.location.href = "/salebatch"; }, 2000);
+                   setaddbatch(false);
 
 
                 } else {
