@@ -11,7 +11,7 @@ export function Subject() {
 
     let [sub, setsub] = useState([]);
     useEffect(() => {
-        axios.post("http://localhost:9999/sub", { batch_id: location.state.batch_id })
+        axios.post("https://edusphere-k3kh.onrender.com/sub", { batch_id: location.state.batch_id })
             .then((res) => {
                 setsub(res.data.data[0]);
                 console.log(res.data.data[0])
