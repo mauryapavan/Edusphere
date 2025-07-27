@@ -30,7 +30,7 @@ export default function Dashboard() {
  let {token}=Cookies.get();
 
    useEffect(() => {
-        axios.post("http://localhost:9999/auth",{token})
+        axios.post("https://edusphere-k3kh.onrender.com/auth",{token})
             .then((res) => {
                 
                 if(res.data.data){
