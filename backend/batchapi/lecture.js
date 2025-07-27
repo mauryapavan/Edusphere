@@ -10,6 +10,8 @@ import pool from '../bd.js';
 
 
 
+
+
 let lecture = async (req, res) => {
     let data = req.body
 

@@ -64,7 +64,6 @@ import pool from './bd.js';
 
 
 
-// Create the connection to database
 
 
 

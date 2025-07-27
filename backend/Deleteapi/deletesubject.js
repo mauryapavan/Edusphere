@@ -9,6 +9,7 @@ import pool from '../bd.js';
 
 
 
+
 let deletesub = async (req, res) => {
     let { sub_id } = req.body;
     try {

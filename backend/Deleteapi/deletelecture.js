@@ -9,6 +9,7 @@ import pool from '../bd.js';
 
 
 
+
 let deletelec=async(req,res)=>{
     let {lec_id}=req.body
    try{

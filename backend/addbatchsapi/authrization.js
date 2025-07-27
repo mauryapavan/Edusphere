@@ -14,6 +14,7 @@ import pool from '../bd.js';
 
 
 
+
 let authrization = async(req, res, next) => {
     let data = req.body;
      

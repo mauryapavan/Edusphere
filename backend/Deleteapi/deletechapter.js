@@ -9,6 +9,7 @@ import pool from '../bd.js';
 
 
 
+
 let deletechap = async (req, res) => {
 
     let { chap_id } = req.body;

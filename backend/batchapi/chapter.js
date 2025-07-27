@@ -7,8 +7,6 @@ import pool from '../bd.js';
 
 
 
-
-
 let chapter = async (req, res) => {
     let data = req.body
 

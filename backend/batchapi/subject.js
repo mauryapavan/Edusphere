@@ -12,6 +12,8 @@ import pool from '../bd.js';
 
 
 
+
+
 let subject = async (req, res) => {
     let data = req.body
 

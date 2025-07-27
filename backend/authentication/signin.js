@@ -11,6 +11,7 @@ import pool from '../bd.js';
 
 
 
+
 function createRandomUser() {
     return {
         userId: faker.string.uuid(),
