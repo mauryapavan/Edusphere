@@ -74,6 +74,9 @@ async function connectDB() {
       database: process.env.db_database,
       password: process.env.db_password,
       connectTimeout: 10000 // 10 seconds
+       waitForConnections: true,
+  connectionLimit: 5, // adjust as per host limit
+  queueLimit: 0,
     });
 
     console.log("✅ Connected to MySQL!");
