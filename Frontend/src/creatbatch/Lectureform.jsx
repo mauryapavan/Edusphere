@@ -32,7 +32,7 @@ export function Lectureform({ setlec, chapter_id }) {
            
             try {
                 const { data } = await axios.post(
-                    "http://localhost:9999/addlec",
+                    "https://edusphere-k3kh.onrender.com/addlec",
                     { lecname, chapter_id, token }
 
                 );
