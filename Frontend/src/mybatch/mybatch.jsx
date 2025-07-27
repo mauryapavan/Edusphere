@@ -23,7 +23,7 @@ export function Mybatch() {
             .catch((err) => {
                 console.log(err);
             })
-    }, [])
+    }, [addbatch])
 
 
 
