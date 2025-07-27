@@ -11,6 +11,9 @@ const connection = await mysql.createConnection({
    port: process.env.db_port,
   database: process.env.db_database,
   password: process.env.db_password,
+   waitForConnections: true,
+  connectionLimit: 5, // adjust as per host limit
+  queueLimit: 0,
 });
 
 
