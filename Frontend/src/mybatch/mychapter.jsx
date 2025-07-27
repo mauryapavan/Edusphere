@@ -23,7 +23,7 @@ export function Mychapters() {
 
     async function deletechap(chap_id) {
 
-        let { data } = await axios.put("http://localhost:9999/chap", { chap_id });
+        let { data } = await axios.put("https://edusphere-k3kh.onrender.com/chap", { chap_id });
 
         const { status, message } = data;
         if (status) {
@@ -40,7 +40,7 @@ export function Mychapters() {
 
 
     useEffect(() => {
-        axios.post("http://localhost:9999/chap", { subject_id: location.state.sub_id })
+        axios.post("https://edusphere-k3kh.onrender.com/chap", { subject_id: location.state.sub_id })
             .then((res) => {
                 setchap2(res.data.data[0]);
 
