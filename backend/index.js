@@ -58,6 +58,7 @@ import deletesub from './Deleteapi/deletesubject.js';
 import deletechap from './Deleteapi/deletechapter.js';
 import deletelec from './Deleteapi/deletelecture.js';
 import imgupload from './addbatchsapi/imageupload.js';
+import pool from './bd.js';
 
 
 
@@ -65,25 +66,7 @@ import imgupload from './addbatchsapi/imageupload.js';
 
 // Create the connection to database
 
-async function connectDB() {
-  try {
-    const connection = await mysql.createConnection({
-      host: process.env.db_host,
-      user: process.env.db_user,
-      port:  parseInt(process.env.db_port),
-      database: process.env.db_database,
-      password: process.env.db_password,
-      connectTimeout: 10000 // 10 seconds
-    });
 
-    console.log("✅ Connected to MySQL!");
-    return connection;
-  } catch (err) {
-    console.error("❌ MySQL connection failed:", err);
-  }
-}
-
-connectDB();
 
 
 function createRandomUser() {
@@ -134,11 +117,11 @@ app.post("/purchased", authrization, async (req, res) => {
   let i = 0;
   let allbatch = [];
   try {
-    await connection.promise().query(`SELECT * FROM purchased WHERE student_email=?`, [data.email])
+    await pool.query(`SELECT * FROM purchased WHERE student_email=?`, [data.email])
       .then(async (result) => {
         let b = result[0].length;
         await result[0].forEach(async (el) => {
-          await connection.promise().query(`SELECT * FROM batch WHERE batch_id=?`, el.batch_id)
+          await pool.query(`SELECT * FROM batch WHERE batch_id=?`, el.batch_id)
             .then((result) => {
               allbatch.push(result[0][0])
             })

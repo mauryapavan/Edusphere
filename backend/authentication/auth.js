@@ -2,23 +2,17 @@ import jwt from 'jsonwebtoken';
 import bcrypt from "bcrypt"
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
+import pool from '../bd.js';
 dotenv.config();
 
 
-const connection = await mysql.createConnection({
-  host: process.env.db_host,
-  user: process.env.db_user, 
-   port: process.env.db_port,
-  database: process.env.db_database,
-  password: process.env.db_password,
-});
 
 
 
 let login = async (req, res) => {
     let data = req.body;
     try {
-        await connection.promise().query(`SELECT * FROM user WHERE email=?`, [data.email])
+        await pool.query(`SELECT * FROM user WHERE email=?`, [data.email])
             .then((result1) => {
               
                 if (result1[0].length >= 1) {

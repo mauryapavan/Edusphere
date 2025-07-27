@@ -4,18 +4,13 @@ import { faker } from '@faker-js/faker';
 import dotenv from 'dotenv';
 dotenv.config();
 import mysql from 'mysql2'
+import pool from '../bd.js';
 
 
 
 
 
-const connection = await mysql.createConnection({
-  host: process.env.db_host,
-  user: process.env.db_user, 
-   port: process.env.db_port,
-  database: process.env.db_database,
-  password: process.env.db_password,
-});
+
 
 function createRandomUser() {
     return {
@@ -31,7 +26,7 @@ let addchap=async (req, res) => {
     let p = "INSERT INTO chapter(chapter_id,chapter_name,owner,subject_id) VALUES (?,?,?,?)";
     let user = [createRandomUser().userId, data.chapname, data.email, data.subject_id];
    
-    await connection.promise().query(p, user)
+    await pool.query(p, user)
       .then((result) => {
        
         res.send({ status: true, message: "chapter add succesfully" });

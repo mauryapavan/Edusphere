@@ -1,25 +1,19 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import mysql from 'mysql2'
+import pool from '../bd.js';
 
 
 
 
 
-const connection = await mysql.createConnection({
-  host: process.env.db_host,
-  user: process.env.db_user, 
-   port: process.env.db_port,
-  database: process.env.db_database,
-  password: process.env.db_password,
-});
 
 
 let chapter = async (req, res) => {
     let data = req.body
 
     try {
-        await connection.promise().query(`SELECT * FROM chapter WHERE subject_id=?`, [data.subject_id])
+        await pool.query(`SELECT * FROM chapter WHERE subject_id=?`, [data.subject_id])
             .then((result) => {
 
                 res.send({ status: true, message: "succes", data: result });

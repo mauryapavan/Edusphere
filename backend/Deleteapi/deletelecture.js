@@ -2,22 +2,17 @@ import { faker } from '@faker-js/faker';
 import dotenv from 'dotenv';
 dotenv.config();
 import mysql from 'mysql2'
+import pool from '../bd.js';
 
 
 
 
 
-const connection = await mysql.createConnection({
-  host: process.env.db_host,
-  user: process.env.db_user, 
-   port: process.env.db_port,
-  database: process.env.db_database,
-  password: process.env.db_password,
-});
+
 let deletelec=async(req,res)=>{
     let {lec_id}=req.body
    try{
-     await connection.promise().query(`delete FROM lecture WHERE  lecture_id =?`, [lec_id])
+     await pool.query(`delete FROM lecture WHERE  lecture_id =?`, [lec_id])
      .then((result)=>{
         console.log(result);
         res.send({status:true,message:"lecture deleted succesfully"})

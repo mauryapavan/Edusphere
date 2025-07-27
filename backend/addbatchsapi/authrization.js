@@ -4,19 +4,14 @@ import bcrypt from "bcrypt"
 import dotenv from 'dotenv';
 dotenv.config();
 import mysql from 'mysql2';
+import pool from '../bd.js';
 
 
 
 
 
 
-const connection = await mysql.createConnection({
-  host: process.env.db_host,
-  user: process.env.db_user, 
-   port: process.env.db_port,
-  database: process.env.db_database,
-  password: process.env.db_password,
-});
+
 
 
 let authrization = async(req, res, next) => {
@@ -28,7 +23,7 @@ let authrization = async(req, res, next) => {
         try {
             var decoded = jwt.verify(cleanedToken, process.env.secret);
             
-             await connection.promise().query(`SELECT * FROM user WHERE email=?`, [decoded.email])
+             await pool.query(`SELECT * FROM user WHERE email=?`, [decoded.email])
              .then((result)=>{
                 //console.log(result)
 
