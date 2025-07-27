@@ -10,7 +10,7 @@ export function Chapters({data}){
      let location=useLocation();
     
       useEffect(() => {
-        axios.post("http://localhost:9999/chap", { subject_id: location.state.sub_id })
+        axios.post("https://edusphere-k3kh.onrender.com/chap", { subject_id: location.state.sub_id })
             .then((res) => {
                 setchap(res.data.data[0]);
                 
