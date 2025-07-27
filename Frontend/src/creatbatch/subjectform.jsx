@@ -28,7 +28,7 @@ export function Subform({setsub,batch_id}) {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:9999/addsub",
+                "https://edusphere-k3kh.onrender.com/addsub",
                 {subname,batch_id,token}
                 
             );
