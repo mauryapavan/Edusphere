@@ -21,7 +21,7 @@ export function Mycard({ data }) {
 
    async function deletebatch(){
       
-        let result= await axios.put("http://localhost:9999/batch",{batch_id:data.batch_id});
+        let result= await axios.put("https://edusphere-k3kh.onrender.com/batch",{batch_id:data.batch_id});
          const { status, message } = result.data;
         if (status) {
             handleSuccess(message);
