@@ -15,7 +15,7 @@ export function Video() {
     }
 
     useEffect(() => {
-        axios.post("http://localhost:9999/lec", { chapter_id: location.state.chap_id })
+        axios.post("https://edusphere-k3kh.onrender.com/lec", { chapter_id: location.state.chap_id })
             .then((res) => {
 
                 setlec(res.data.data[0]);
