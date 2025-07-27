@@ -26,7 +26,7 @@ export function Mysubject() {
 
     async function deletesub(sub_id) {
 
-        let { data } = await axios.put("http://localhost:9999/sub", { sub_id });
+        let { data } = await axios.put("https://edusphere-k3kh.onrender.com/sub", { sub_id });
         const { status, message } = data;
         if (status) {
             handleSuccess(message);
@@ -40,7 +40,7 @@ export function Mysubject() {
     }
 
     useEffect(() => {
-        axios.post("http://localhost:9999/sub", { batch_id: batch_id })
+        axios.post("https://edusphere-k3kh.onrender.com/sub", { batch_id: batch_id })
             .then((res) => {
                 setsub2(res.data.data[0]);
 
