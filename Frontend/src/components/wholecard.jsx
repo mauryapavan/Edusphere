@@ -8,7 +8,7 @@ export function Wholecard() {
 
 let [data1, setdata1] = useState([]);
   useEffect(()=>{
-     axios.post("http://localhost:9999/")
+     axios.post("https://edusphere-k3kh.onrender.com/")
    .then((res)=>{
    
     setdata1(res.data.result[0]);
