@@ -73,7 +73,7 @@ async function connectDB() {
       port:  parseInt(process.env.db_port),
       database: process.env.db_database,
       password: process.env.db_password,
-      connectTimeout: 10000 // 10 seconds
+      connectTimeout: 10000, // 10 seconds
        
      connectionLimit: 5, // adjust as per host limit
      queueLimit: 0,
