@@ -37,7 +37,7 @@ export function Chapterform({ setchap, subject_id }) {
                 const { status, message } = data;
                 if (status) {
                     handleSuccess(message);
-                    setTimeout(() => { window.location.href = "/mychapters"; }, 2000);
+                   setchap(false)
 
 
                 } else {
