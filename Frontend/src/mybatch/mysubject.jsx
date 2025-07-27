@@ -49,7 +49,7 @@ export function Mysubject() {
             .catch((err) => {
                 console.log(err);
             })
-    }, [])
+    }, [sub])
 
     function chapter(sub_id) {
 
