@@ -24,7 +24,7 @@ export function Card({data}){
         if (token) {
             try {
                 const { data } = await axios.post(
-                    "http://localhost:9999/buy",
+                    "https://edusphere-k3kh.onrender.com/buy",
                     { batch_id,  token }
 
                 );
