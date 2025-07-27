@@ -35,7 +35,7 @@ export function Subform({setsub,batch_id}) {
             const { status, message } = data;
             if (status) {
                 handleSuccess(message);
-                setTimeout(()=>{window.location.href="/mysubject";},2000);
+                setsub(false);
                 
                 
             } else {
