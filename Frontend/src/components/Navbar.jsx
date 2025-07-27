@@ -6,7 +6,12 @@ export  function Navbar({user}){
   function  navprof(){
     navigate("/profile",{replace:true,state:{user:user}})
   }
-  
+   function login(){
+    navigate("/login")
+  }
+   function signin(){
+    navigate("/signin")
+  }
     
   return(
     <>
@@ -25,10 +30,10 @@ export  function Navbar({user}){
       
       {user.length<1?<div class="md-flex lg:flex lg:flex-1 lg:justify-end mr-5">
         <div className="mr-1  sm:mr-5 signin">
-        <a href="/signin" class=" text-base sm:text-lg  ">Sign in <span aria-hidden="true">&rarr;</span></a>
+        <a onClick={signin}  class=" text-base sm:text-lg  ">Sign in <span aria-hidden="true">&rarr;</span></a>
         </div>
       <div className="mr-1 sm:mr-5 login">
-      <a href="/login" class="text-lg ">Log in <span aria-hidden="true">&rarr;</span></a>
+      <a onClick={login}  class="text-lg ">Log in <span aria-hidden="true">&rarr;</span></a>
       </div>
         
       </div>
