@@ -22,7 +22,7 @@ export function Myvideo() {
 
     async function deletelec(lec_id) {
 
-        let {data} = await axios.put("http://localhost:9999/lec", { lec_id });
+        let {data} = await axios.put("https://edusphere-k3kh.onrender.com/lec", { lec_id });
         
         const { status, message } = data;
         if (status) {
@@ -42,7 +42,7 @@ export function Myvideo() {
     }
 
     useEffect(async () => {
-        await axios.post("http://localhost:9999/lec", { chapter_id: location.state.chap_id })
+        await axios.post("https://edusphere-k3kh.onrender.com/lec", { chapter_id: location.state.chap_id })
             .then((res) => {
 
                 setlec2(res.data.data[0]);
