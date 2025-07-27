@@ -49,7 +49,7 @@ export function Mychapters() {
             .catch((err) => {
                 console.log(err);
             })
-    }, [])
+    }, [chap])
 
     function lecture(chap_id) {
         navigate("/myvideo", { replace: true, state: { chap_id: chap_id } })
