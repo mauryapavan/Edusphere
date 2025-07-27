@@ -11,7 +11,7 @@ export function Buybatch() {
     let [data1, setdata1] = useState([]);
     if (token) {
         useEffect(() => {
-            axios.post("http://localhost:9999/purchased", { token })
+            axios.post("https://edusphere-k3kh.onrender.com/purchased", { token })
                 .then((res) => {
                     console.log(res)
                     setdata1(res.data.allbatch);
