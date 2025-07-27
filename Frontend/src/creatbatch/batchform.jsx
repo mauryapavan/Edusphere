@@ -40,7 +40,7 @@ export function Formbatch({ setaddbatch }) {
 
                 
                 const { data } = await axios.post(
-                    "http://localhost:9999/addbatch",formData );
+                    "https://edusphere-k3kh.onrender.com/addbatch",formData );
                 const { status, message } = data;
                 if (status) {
                     handleSuccess(message);
