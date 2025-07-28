@@ -27,7 +27,7 @@ export function Myvideo() {
         const { status, message } = data;
         if (status) {
             handleSuccess(message);
-            setlec(true);
+            setLectures(true);
 
 
         } else {
