@@ -5,7 +5,7 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
-export function Lectureform({ setLectures, chapter_id }) {
+export function Lectureform({ setaddlec, chapter_id }) {
     let location = useLocation()
 
 
