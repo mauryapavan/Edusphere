@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
-export function Mycard({ data }) {
+export function Mycard({ data,setaddbatch }) {
  
     const navigate = useNavigate();
      const handleError = (err) =>
@@ -25,7 +25,7 @@ export function Mycard({ data }) {
          const { status, message } = result.data;
         if (status) {
             handleSuccess(message);
-            setTimeout(() => { window.location.href = "/salebatch"; }, 2000);
+            setaddbatch(true);
 
 
         } else {
