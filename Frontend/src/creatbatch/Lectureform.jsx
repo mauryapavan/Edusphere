@@ -5,7 +5,7 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
-export function Lectureform({ setlec, chapter_id }) {
+export function Lectureform({ setLectures, chapter_id }) {
     let location = useLocation()
 
 
@@ -39,7 +39,7 @@ export function Lectureform({ setlec, chapter_id }) {
                 const { status, message } = data;
                 if (status) {
                     handleSuccess(message);
-                  setlec(false);
+                  setLectures(false);
 
 
                 } else {
@@ -51,7 +51,7 @@ export function Lectureform({ setlec, chapter_id }) {
             setlecname({ name: "", link: "" })
         }
         else{
-            handleError("you are nto log in please login ");
+            handleError("you are not log in please login ");
         }
     }
 
@@ -63,7 +63,7 @@ export function Lectureform({ setlec, chapter_id }) {
                         <h1 className="font-serif text-xl">add new lecture</h1>
                     </div>
 
-                    <div className="mx-9  "><i class="fa-solid fa-xmark text-2xl" onClick={() => setlec(false)}></i> </div>
+                    <div className="mx-9  "><i class="fa-solid fa-xmark text-2xl" onClick={() => setLectures(false)}></i> </div>
 
                 </div>
                 <form action="" onSubmit={submit}>
