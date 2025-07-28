@@ -30,8 +30,7 @@ export function Mysubject() {
         const { status, message } = data;
         if (status) {
             handleSuccess(message);
-            setTimeout(() => { window.location.href = "/mysubject"; }, 2000);
-
+            setsub(true);
 
         } else {
             handleError(message);
@@ -49,7 +48,7 @@ export function Mysubject() {
             .catch((err) => {
                 console.log(err);
             })
-    }, [sub])
+    }, [addsub])
 
     function chapter(sub_id) {
 
