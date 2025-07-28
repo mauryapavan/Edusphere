@@ -44,10 +44,11 @@ export function Myvideo() {
     useEffect(async () => {
         await axios.post("https://edusphere-k3kh.onrender.com/lec", { chapter_id: location.state.chap_id })
             .then((res) => {
-
-                setlec2(res.data.data[0]);
-                //golive(0);
-                setlive({ i: 0, link: res.data.data[0][0].lecture_link })
+                if(res.data.data[0].length>0){
+                    setlec2(res.data.data[0]);
+                     //golive(0);
+                  setlive({ i: 0, link: res.data.data[0][0].lecture_link })
+                }
 
             })
             .catch((err) => {
