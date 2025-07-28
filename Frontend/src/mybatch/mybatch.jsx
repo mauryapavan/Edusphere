@@ -37,7 +37,7 @@ export function Mybatch() {
                        
                         return (
                             <div>
-                                <Mycard key={ind} data={el} />
+                                <Mycard key={ind} data={el} setaddbatch={setaddbatch} />
                             </div>
                         )
 
