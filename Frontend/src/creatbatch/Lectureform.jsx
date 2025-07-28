@@ -39,7 +39,7 @@ export function Lectureform({ setLectures, chapter_id }) {
                 const { status, message } = data;
                 if (status) {
                     handleSuccess(message);
-                  setLectures(false);
+                 setaddlec(false);
 
 
                 } else {
@@ -63,7 +63,7 @@ export function Lectureform({ setLectures, chapter_id }) {
                         <h1 className="font-serif text-xl">add new lecture</h1>
                     </div>
 
-                    <div className="mx-9  "><i class="fa-solid fa-xmark text-2xl" onClick={() => setLectures(false)}></i> </div>
+                    <div className="mx-9  "><i class="fa-solid fa-xmark text-2xl" onClick={() => setaddlec(false)}></i> </div>
 
                 </div>
                 <form action="" onSubmit={submit}>
