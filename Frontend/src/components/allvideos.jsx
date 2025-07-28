@@ -18,8 +18,11 @@ export function Video() {
         axios.post("https://edusphere-k3kh.onrender.com/lec", { chapter_id: location.state.chap_id })
             .then((res) => {
 
-                setlec(res.data.data[0]);
-                golive(0);
+               if(res.data.data[0].length>0){
+                    setlec(res.data.data[0]);
+                  //golive(0);
+                   setlive({ i: 0, link: res.data.data[0][0].lecture_link })
+                }
 
             })
             .catch((err) => {
