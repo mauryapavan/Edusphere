@@ -6,9 +6,9 @@ import { ToastContainer, toast } from "react-toastify";
 
 export function Myvideo() {
     let [side, setside] = useState(false);
-    let [addlec, setlec] = useState(false);
+    let [addlec, setaddlec] = useState(false);
 
-    let [lec, setlec2] = useState([]);
+    let [lec, setLectures] = useState([]);
     let location = useLocation();
     let [live, setlive] = useState({ i: 0, link: "" });
     const handleError = (err) =>
@@ -89,7 +89,7 @@ export function Myvideo() {
                     <h3 className="text-lg font-semibold " style={{ color: "black" }}>Add new lecture</h3>
                 </div>
             </div>}
-            {addlec && <Lectureform setlec={setlec} chapter_id={location.state.chap_id} />}
+             {addlec && <Lectureform setLectures={setLectures} chapter_id={location.state.chap_id} />}
             <div className="w-4/5 text-center p-2 m-2 sm:p-5 sm:m-5 mainvideo" style={{ backgroundColor: "black" }}>
                 {live.link.length > 1 && <video className="h-150 w-4/5 justify-self-center-safe" src={live.link} controls  ></video>}
             </div>
