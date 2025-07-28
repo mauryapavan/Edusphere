@@ -84,7 +84,7 @@ export function Myvideo() {
 
 
                 }
-                <div className=" p-1 m-2 sm:p-3 sm:m-2 videodes " style={{ backgroundColor: "#f2f7ff" }} onClick={() => { setlec(!addlec) }}>
+                <div className=" p-1 m-2 sm:p-3 sm:m-2 videodes " style={{ backgroundColor: "#f2f7ff" }} onClick={() => { setaddlec(!addlec) }}>
                     <i class="fa-solid fa-plus text-lg font-semibold  " style={{ color: "black" }}></i>
                     <h3 className="text-lg font-semibold " style={{ color: "black" }}>Add new lecture</h3>
                 </div>
