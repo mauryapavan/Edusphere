@@ -27,7 +27,7 @@ export function Myvideo() {
         const { status, message } = data;
         if (status) {
             handleSuccess(message);
-            setLectures(true);
+           setaddlec(true);
 
 
         } else {
@@ -45,7 +45,7 @@ export function Myvideo() {
         await axios.post("https://edusphere-k3kh.onrender.com/lec", { chapter_id: location.state.chap_id })
             .then((res) => {
                 if(res.data.data[0].length>0){
-                    setlec2(res.data.data[0]);
+                    setLectures(res.data.data[0]);
                      //golive(0);
                   setlive({ i: 0, link: res.data.data[0][0].lecture_link })
                 }
@@ -89,7 +89,7 @@ export function Myvideo() {
                     <h3 className="text-lg font-semibold " style={{ color: "black" }}>Add new lecture</h3>
                 </div>
             </div>}
-             {addlec && <Lectureform setLectures={setLectures} chapter_id={location.state.chap_id} />}
+             {addlec && <Lectureform setaddlec={setaddlec} chapter_id={location.state.chap_id} />}
             <div className="w-4/5 text-center p-2 m-2 sm:p-5 sm:m-5 mainvideo" style={{ backgroundColor: "black" }}>
                 {live.link.length > 1 && <video className="h-150 w-4/5 justify-self-center-safe" src={live.link} controls  ></video>}
             </div>
