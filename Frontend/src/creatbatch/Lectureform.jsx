@@ -39,7 +39,7 @@ export function Lectureform({ setlec, chapter_id }) {
                 const { status, message } = data;
                 if (status) {
                     handleSuccess(message);
-                    setTimeout(() => { window.location.href = "/myvideo"; }, 2000);
+                  setlec(false);
 
 
                 } else {
