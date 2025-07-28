@@ -28,7 +28,7 @@ export function Mychapters() {
         const { status, message } = data;
         if (status) {
             handleSuccess(message);
-            setTimeout(() => { window.location.href = "/mychapters"; }, 2000);
+           setchap(true);
 
 
         } else {
@@ -49,7 +49,7 @@ export function Mychapters() {
             .catch((err) => {
                 console.log(err);
             })
-    }, [chap])
+    }, [addchap])
 
     function lecture(chap_id) {
         navigate("/myvideo", { replace: true, state: { chap_id: chap_id } })
