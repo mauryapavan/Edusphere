@@ -27,7 +27,7 @@ export function Myvideo() {
         const { status, message } = data;
         if (status) {
             handleSuccess(message);
-            setTimeout(() => { window.location.href = "/myvideo"; }, 2000);
+            setlec(true);
 
 
         } else {
@@ -53,7 +53,7 @@ export function Myvideo() {
             .catch((err) => {
                 console.log(err);
             })
-    }, [])
+    }, [addlec])
 
     return (
         <div className="flex  "  >
