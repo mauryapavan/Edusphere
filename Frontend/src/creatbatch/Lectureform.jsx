@@ -34,7 +34,14 @@ export function Lectureform({ setLectures,setShowAddLecture, chapter_id }) {
 
             if (status) {
                 handleSuccess(message);
-                setaddlec(false); // ✅ closes the form
+                const res = await axios.post(
+                    "https://edusphere-k3kh.onrender.com/lec",
+                    { chapter_id: location.state.chap_id }
+                );
+                if (res.data.data[0].length > 0) {
+                    setLectures(res.data.data[0]);
+                   setShowAddLecture(false);
+                }
             } else {
                 handleError(message);
             }
