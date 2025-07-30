@@ -32,9 +32,7 @@ export function Card({data}){
                 const { status, message } = data;
                 if (status) {
                     handleSuccess(message);
-                    setTimeout(() => { window.location.href = "/"; }, 2000);
-
-
+                    
                 } else {
                     handleError(message);
                 }
