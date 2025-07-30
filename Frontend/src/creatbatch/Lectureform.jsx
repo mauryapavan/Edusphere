@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 
-export function Lectureform({ setaddlec, chapter_id }) {
+export function Lectureform({ setLectures,setShowAddLecture, chapter_id }) {
     const location = useLocation();
     const [lecname, setlecname] = useState({ name: "", link: "" });
     const token = Cookies.get("token"); // ✅ fixed
