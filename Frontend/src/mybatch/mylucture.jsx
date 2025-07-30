@@ -23,7 +23,17 @@ export function Myvideo() {
             const { status, message } = data;
             if (status) {
                 handleSuccess(message);
-                setShowAddLecture(true); // triggers refetch
+                const res = await axios.post(
+                    "https://edusphere-k3kh.onrender.com/lec",
+                    { chapter_id: location.state.chap_id }
+                );
+                if (res.data.data[0].length > 0) {
+                    setLectures(res.data.data[0]);
+                    setLive({
+                        i: 0,
+                        link: res.data.data[0][0].lecture_link,
+                    });
+                }
             } else {
                 handleError(message);
             }
@@ -55,7 +65,7 @@ export function Myvideo() {
             }
         }
         fetchLectures();
-    }, [showAddLecture, location.state.chap_id]);
+    }, []);
 
     return (
         <div className="flex">
